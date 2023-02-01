@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-22.04
 
     steps:
@@ -17,7 +17,7 @@ jobs:
           node-version: 16
           cache: 'npm'
 
-      - name: build
+      - name: install
         run: npm ci
 
       - name: unit tests
