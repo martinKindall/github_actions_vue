@@ -31,8 +31,8 @@ jobs:
         run: npm run build
 
       - name: deploy
-          uses: reggionick/s3-deploy@v3
-          with:
-            folder: dist
-            bucket: ${{ secrets.S3_BUCKET }}
-            bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+        uses: reggionick/s3-deploy@v3
+        with:
+          folder: dist
+          bucket: ${{ secrets.S3_BUCKET }}
+          bucket-region: ${{ secrets.S3_BUCKET_REGION }}
