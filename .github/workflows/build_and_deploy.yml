@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-
+#oidc encima de oauth 2.0
 permissions:
   id-token: write
   contents: read
@@ -35,7 +35,7 @@ jobs:
         with:
           aws-region: ${{ secrets.S3_BUCKET_REGION }}
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT }}:role/vue-app-uploader-role
-          role-session-name: GithubSession
+          role-session-name: GithubSession # OIDC
 
       - name: Check login
         run: aws sts get-caller-identity
